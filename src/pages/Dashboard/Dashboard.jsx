@@ -22,7 +22,7 @@ export default function Dashboard({ currentUser, getUserTransactions, handleLogo
                 Welcome back, {currentUser.username}!
               </p>
             </div>
-            <DollarSign className="balance-icon" />
+            <img src="/unnamed-removebg-preview.png" alt="GoonPay Logo" className="balance-icon" style={{ width: '128px', height: '128px', objectFit: 'contain', opacity: 0.8 }} />
           </div>
         </div>
 

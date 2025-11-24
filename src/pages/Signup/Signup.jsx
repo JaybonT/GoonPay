@@ -64,7 +64,7 @@ export default function Signup() {
 
         <div className="signup-header">
           <div className="signup-icon-wrapper">
-            <UserPlus className="signup-icon" />
+            <img src="/unnamed-removebg-preview.png" alt="GoonPay Logo" className="signup-icon" style={{ width: '192px', height: '192px', objectFit: 'contain' }} />
           </div>
 
           <h1 className="signup-title">Create Account</h1>

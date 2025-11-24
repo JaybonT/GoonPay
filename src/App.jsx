@@ -95,6 +95,17 @@ export default function App() {
 
       setSendSuccess(data.message || "Transfer complete");
       setSendForm({ recipient: "", amount: "", note: "" });
+      
+      // Play sound effect
+      try {
+        const audio = new Audio('/goon.mp3');
+        audio.volume = 0.7;
+        audio.play().catch(err => {
+          console.error('Audio play failed:', err);
+        });
+      } catch (err) {
+        console.error('Audio creation failed:', err);
+      }
 
       const historyRes = await fetch(
         `${API_BASE}/api/transactions/history`,

@@ -8,7 +8,7 @@ export default function Navbar({ handleLogout }) {
       <div className="navbar-inner">
 
         <div className="navbar-logo">
-          <CreditCard className="navbar-logo-icon" />
+          <img src="/unnamed-removebg-preview.png" alt="GoonPay Logo" className="navbar-logo-icon" style={{ width: '64px', height: '64px', objectFit: 'contain' }} />
           <h1 className="navbar-title">GoonPay</h1>
         </div>
 

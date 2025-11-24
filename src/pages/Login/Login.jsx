@@ -31,7 +31,7 @@ export default function Login() {
 
         <div className="login-header">
           <div className="login-icon-wrapper">
-            <CreditCard className="login-icon" />
+            <img src="/unnamed-removebg-preview.png" alt="GoonPay Logo" className="login-icon" style={{ width: '192px', height: '192px', objectFit: 'contain' }} />
           </div>
           <h1 className="login-title">GoonPay</h1>
           <p className="login-subtitle">Virtual Payment Simulator</p>
