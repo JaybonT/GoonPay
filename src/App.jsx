@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CreditCard, Send, History, User, LogOut, UserPlus, LogIn, DollarSign, ArrowUpRight, ArrowDownLeft, Home } from 'lucide-react';
 
 const GoonPay = () => {
@@ -28,6 +28,19 @@ const GoonPay = () => {
     ];
     setUsers(demoUsers);
   }, []);
+
+  // Function to play sound effect
+  const playSound = () => {
+    try {
+      const audio = new Audio('/goon-sound.mp3');
+      audio.volume = 0.7;
+      audio.play().catch(err => {
+        console.error('Audio play failed:', err);
+      });
+    } catch (err) {
+      console.error('Audio creation failed:', err);
+    }
+  };
 
   const handleSignup = () => {
     setError('');
@@ -143,6 +156,9 @@ const GoonPay = () => {
     setCurrentUser({ ...currentUser, balance: currentUser.balance - amount });
     setSuccess(`Successfully sent $${amount.toFixed(2)} to ${recipient.username}`);
     setSendForm({ recipient: '', amount: '', note: '' });
+    
+    // Play sound effect
+    playSound();
   };
 
   const getUserTransactions = () => {
@@ -155,8 +171,8 @@ const GoonPay = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-600 rounded-full mb-4">
-            <CreditCard className="w-8 h-8 text-white" />
+          <div className="inline-flex items-center justify-center mb-4">
+            <img src="/goonpay-logo.png" alt="GoonPay Logo" className="w-48 h-48" />
           </div>
           <h1 className="text-3xl font-bold text-gray-800">GoonPay</h1>
           <p className="text-gray-600 mt-2">Virtual Payment Simulator</p>
@@ -233,8 +249,8 @@ const GoonPay = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-600 rounded-full mb-4">
-            <UserPlus className="w-8 h-8 text-white" />
+          <div className="inline-flex items-center justify-center mb-4">
+            <img src="/goonpay-logo.png" alt="GoonPay Logo" className="w-48 h-48" />
           </div>
           <h1 className="text-3xl font-bold text-gray-800">Create Account</h1>
           <p className="text-gray-600 mt-2">Join GoonPay today</p>
@@ -334,7 +350,7 @@ const GoonPay = () => {
       <nav className="bg-white shadow-sm border-b">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <CreditCard className="w-8 h-8 text-indigo-600" />
+            <img src="/goonpay-logo.png" alt="GoonPay Logo" className="w-16 h-16" />
             <h1 className="text-2xl font-bold text-gray-800">GoonPay</h1>
           </div>
           <div className="flex items-center gap-4">
@@ -395,7 +411,7 @@ const GoonPay = () => {
                   <h2 className="text-5xl font-bold">${currentUser.balance.toFixed(2)}</h2>
                   <p className="text-indigo-200 mt-4">Welcome back, {currentUser.username}!</p>
                 </div>
-                <DollarSign className="w-16 h-16 text-indigo-300" />
+                <img src="/goonpay-logo.png" alt="GoonPay Logo" className="w-32 h-32 opacity-80" />
               </div>
             </div>
 
