@@ -150,7 +150,7 @@
 
 .dashboard-tx-item {
   display: grid;
-  grid-template-columns: auto minmax(0, 1.6fr) minmax(0, 1fr);
+  grid-template-columns: 80px minmax(0, 1.6fr) minmax(0, 1fr);
   gap: 0.6rem;
   align-items: flex-start;
 }
@@ -165,6 +165,10 @@
 .dashboard-amount {
   font-weight: 600;
   font-size: 0.95rem;
+  white-space: nowrap;
+  min-width: 80px;
+  text-align: right;
+  flex-shrink: 0;
 }
 
 .dashboard-amount.positive {
