@@ -34,6 +34,54 @@
   height: 16px;
 }
 
+.class-detail-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.class-delete-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s, box-shadow 0.1s;
+}
+
+.class-delete-btn:hover:not(:disabled) {
+  background: #fecaca;
+  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.2);
+  transform: translateY(-1px);
+}
+
+.class-delete-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(185, 28, 28, 0.15);
+}
+
+.class-delete-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  .class-detail-header-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .class-delete-btn {
+    width: 100%;
+  }
+}
+
 .class-header {
   display: flex;
   justify-content: space-between;
