@@ -7,12 +7,29 @@ The GoonBucks frontend is a React + Vite web application that provides two inter
 
 This frontend communicates with the GoonBucks backend through a REST API.
 
-# Instructions
+## Instructions
 npm install
 
 npm run dev
 
 This starts the frontend on: http://localhost:5173
+
+## Demo
+Here are two demo logins with fake information for an existing class!
+This class is called Intro to GoonPay.
+There is one student, and one professor:
+Professor:
+Username: zach1
+Password: zach123
+
+Student:
+Username: jason1
+Password: jason123
+
+There are two existing items. Attempt to buy on the student account. Reward / Add to the market place on the
+Professor account.
+
+You may also view transaction history.
 
 ## Features
 - Login for professors and students
